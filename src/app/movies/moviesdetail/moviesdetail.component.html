@@ -1,0 +1,69 @@
+<div class='card'
+     *ngIf='product'>
+  <div class='card-header'>
+    <div class='col-md-4'>{{product.Type|uppercase}}{{' NAME:' + product.Title}}</div>
+  </div>
+
+  <div class='card-body'>
+    <div class='col-md-10'>
+      <img class='center-block img-responsive'
+           [style.width.px]='200'
+           [style.margin.px]='10'
+           [src]='product.Poster'
+           [title]='product.Title'>
+    </div>
+    <div class='row'>
+      <div class='col-md-8'>
+        <div class='row'>
+          <div class='col-md-4'>Name:</div>
+          <div class='col-md-8'>{{product.Title}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Director:</div>
+          <div class='col-md-8'>{{product.Director}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Production:</div>
+          <div class='col-md-8'>{{product.Production}}</div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-4'>ReleaseDate:</div>
+          <div class='col-md-8'>{{product.Released}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>RunTime:</div>
+          <div class='col-md-8'>{{product.Runtime}}</div>
+        </div>
+
+        <div class='row'>
+          <div class='col-md-4'>Imdb Rating:</div>
+          <div class='col-md-8'>{{product.imdbRating}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Plot:</div>
+          <div class='col-md-8'>{{product.Plot}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Awards:</div>
+          <div class='col-md-8'>{{product.Awards}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Languages:</div>
+          <div class='col-md-8'>{{product.Language}}</div>
+        </div>
+        <div class='row'>
+          <div class='col-md-4'>Imdb Votes:</div>
+          <div class='col-md-8'>{{product.imdbVotes}}</div>
+        </div>
+
+    </div>
+  </div>
+
+  <div class='card-footer'>
+    <button class="btn btn-outline-info my-2 my-sm-0"
+            (click)='onBack()'
+            style='width:80px'> Back
+    </button>
+  </div>
+</div>

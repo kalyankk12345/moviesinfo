@@ -1,0 +1,43 @@
+<div class='card'>
+  <div class='card-header'>
+  <img src='assets/images/m.png' width='90'>
+  <nav class="navbar navbar-light bg-light">
+    <div class="form-inline">
+      <input class="form-control mr-sm-2" type="search" #searchBox id="search-box" placeholder="SEARCH USING MOVIE NAME....." aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)=search(searchBox.value)>Search</button>
+    </div>
+  </nav>
+        <h4 *ngIf="movies.length==0"><p class="badge badge-danger" href="#">NO MOVIES FOR :{{searchval|uppercase}}</p></h4>
+        <h4 *ngIf="movies.length!=0"><p class="badge badge-success" href="#">LIST OF MOVIES FOR :{{searchval|uppercase}}</p></h4>
+        <h4 *ngIf="movies.length!=0"><p class="badge badge-success" href="#">CLICK ON TITLE IN TABLE TO GET INFO ABOUT MOVIE</p></h4>
+  </div>
+    <div class='table-responsive'>
+      <table class="table table-sm table-dark">
+        <thead>
+          <tr *ngIf="movies.length!=0">
+            <th>
+             IMAGE
+            </th>
+            <th>
+              TITLE
+            </th>
+            <th>
+              YEAR
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="table-info" *ngFor='let movie of movies'>
+            <td >
+              <img [src]='movie.Poster' [title]=movie.Title
+              [style.width.px]='100'
+              [style.margin.px]='2'></td>
+              <td><a class="badge badge-info" [routerLink]="['/movies',movie.imdbID]">{{movie.Title}} </a></td>
+            <td><a class="badge badge-warning" href="#">{{movie.Year}}</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
